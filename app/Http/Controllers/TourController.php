@@ -10,6 +10,7 @@ use App\Models\Moytransport;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class TourController extends Controller
 {
@@ -216,5 +217,25 @@ class TourController extends Controller
         $tour=Tour::find($id);
         $tour->delete();
         return redirect()->route('Tours.index');
+    }
+
+
+    public function availability(){
+
+        $groups=DB::select('SELECT t.id,t.Title,t.image,g.prix,g.Group_Size,sum(b.N_Places) as nbr FROM groups as g, tours as t, bookings as b WHERE g.tour_id=t.id and g.id=b.group_id and t.agency_id= ?
+        group by t.id,t.Title,t.image,g.prix,g.Group_Size',[Auth::user()->id]);
+
+
+        return view('tours.Availability',['tours'=>$groups]);
+    }
+
+    public function SearchByTitle(Request $request){
+
+        $tours=DB::select('SELECT t.id,t.Title,t.image,g.prix,g.Group_Size,sum(b.N_Places) as nbr FROM groups as g, tours as t, bookings as b WHERE g.tour_id=t.id and g.id=b.group_id and t.agency_id= ? and t.Title= ?
+        group by t.id,t.Title,t.image,g.prix,g.Group_Size', [Auth::user()->id,$request->Title]);
+
+
+        return $tours;
+
     }
 }

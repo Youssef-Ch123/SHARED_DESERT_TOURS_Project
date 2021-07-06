@@ -113,10 +113,10 @@
 				<div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
 
 					<!-- begin:: Aside -->
-					<div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
+					<div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" style="background-color: white;height: 150px;padding: 0">
 						<div class="kt-aside__brand-logo">
-							<a href="index.html">
-								<img alt="Logo" src="assets/media/logos/logo-light.png" />
+                        <a href="{{url('/Agency')}}">
+                            <img alt="Logo" src="{{url('/images/tour-guide-icon-14.jpg')}}" width="265" />
 							</a>
 						</div>
 						<div class="kt-aside__brand-tools">
@@ -144,7 +144,7 @@
 					</div>
 
 					<!-- end:: Aside -->
-
+                    <h4 style="text-align: center">DESERT TOURS</h4>
 					<!-- begin:: Aside Menu -->
 					<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
 						<div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
@@ -193,6 +193,14 @@
                                             </ul>
 									</div>
                                 </li>
+
+                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{ url('/Availability') }}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+                                      </svg>
+                                    </span><span class="kt-menu__link-text">Availability</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                </li>
+
                                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
@@ -203,7 +211,7 @@
                                                 <li id="sm1" aria-haspopup="true" class="kt-menu__item"><a href="{{ route('Paiement.create') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">payment settings</span></a></li>
                                             </ul>
 									</div>
-								</li>
+                                </li>
 							</ul>
 						</div>
 					</div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\MoyTransportController;
 use App\Http\Controllers\PaimentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TourController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,5 +69,13 @@ Route::resource('Transportations', MoyTransportController::class);
 Route::resource('Tours', TourController::class);
 
 Route::resource('Paiement', PaimentController::class);
+
+Route::get('/Availability', 'App\Http\Controllers\TourController@availability');
+Route::get('/SearchByTitle', 'App\Http\Controllers\TourController@SearchByTitle');
+
+Route::get('/Search', function(Request $request){
+    return view('tours.Search',['tours'=>$request]);
+});
+
 
 

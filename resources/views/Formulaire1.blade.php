@@ -166,7 +166,7 @@
                                     </div>
                             </div>
 
-                            
+
 
                             <div class="kt-wizard-v2__nav-item" data-ktwizard-type="step" data-ktwizard-state="pending">
                                 <div class="kt-wizard-v2__nav-body">
@@ -259,13 +259,17 @@
 
 
                         <div class="kt-wizard-v2__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-                                <div class="kt-heading kt-heading--md"><h2>What we'll do </h2></div>
+                                <div class="kt-heading kt-heading--md"><h2>What we'll do? </h2>
+
+                                </div>
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v2__form">
                                             <p>Your activity description is a chance to inspire guests to take your
                                                     experience. Think about it like a story, With a beginning, middle,
                                                     and end.
-                                                    </p><br>
+                                                    </p>
+                                                    <img src="{{url('/images/tour-guide-icon-13.jpg')}}"/>
+                                                    <br>
                                                 <h4>Describe your experience
                                                     </h4><br>
                                                     <ol>
@@ -590,7 +594,9 @@
 
                         <!--begin: Form Wizard Step 3-->
                         <div class="kt-wizard-v2__content" data-ktwizard-type="step-content">
-                            <div class="kt-heading kt-heading--md"><h2>Add details about what you'll provide</h2></div>
+                            <div class="kt-heading kt-heading--md"><h2>Add details about what you'll provide?</h2>
+                                <img src="/images/hotel.jpg" width="400px"/>
+                            </div>
                             <div class="kt-form__section kt-form__section--first">
                                 <div class="kt-wizard-v2__form">
                                         <br><br>
@@ -624,9 +630,9 @@
                                             </div>
                                             <hr>
                                             <div class="mydiv">
-                                                <span>TRANSPORTATION</span><br>
+                                                <span>Food</span><br>
                                                 <label><strong id="Transportation" hidden></strong></label>
-                                                <textarea placeholder="Ex: Car" name="textAr_Transport" cols="42" id="textAr_Transport">
+                                                <textarea placeholder="FOOD" name="textAr_Transport" cols="42" id="textAr_Transport">
                                                     </textarea>&nbsp;&nbsp;&nbsp;<span style="float:right"><a style="color: #159F5C" id="done2" onclick="hid2()">Done</a><a style="color: #007ACC" onclick="show2(false)" id="edit2" hidden>Edit</a>&nbsp;|&nbsp;<a style="color: #FF0000" id="remove2" hidden onclick="show2(true)">Remove</a></span>
                                             </div>
                                         </div>
@@ -636,10 +642,12 @@
 
 
                         <div class="kt-wizard-v2__content" data-ktwizard-type="step-content">
-                                <div class="kt-heading kt-heading--md"><h2>Maximum group size</h2></div>
+                                <div class="kt-heading kt-heading--md"><h2>Maximum group size</h2>
+                                    <img src="/images/group.png" width="200px" style="float: right"/>
+                                </div>
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v2__form">
-                                            <span>Think about the group size that works best for your experience. Should it be small and intimate? Is it fun With a large group? Please note that Airbnb has a one-guest minimum, which means that if only one person books your adventure, you'll still be expected to host.</span><br><br><br>
+                                            <span>Think about the group size that works best for your experience. Should it be small and intimate? Is it fun With a large group? Please note that Airbnb has a one-guest minimum, which means that if only one person books your adventure, you'll still be expected to host.</span><br><br><br><br><br>
                                             <input type="number" class="form-control" min="1" placeholder="Group size" name="Group_Size"/><br><br>
                                             <div class="form-group">
                                                 <label>Price for each person</label>
@@ -652,7 +660,8 @@
 
                         <!--begin: Form Wizard Step 4-->
                         <div class="kt-wizard-v2__content" data-ktwizard-type="step-content">
-                            <div class="kt-heading kt-heading--md"><h2>Who can attend your experience?</h2></div>
+                            <div class="kt-heading kt-heading--md"><h2>Who can attend your experience?</h2>
+                                </div>
                             <div class="kt-form__section kt-form__section--first">
                                 <div class="kt-wizard-v2__form">
 
@@ -711,7 +720,9 @@
 
                         <!--end: Form Wizard Step 5-->
                         <div class="kt-wizard-v2__content" data-ktwizard-type="step-content">
-                                <div class="kt-heading kt-heading--md"><h2>What guests should bring</h2></div>
+                        <div class="kt-heading kt-heading--md"><h2>What guests should bring?</h2>
+                            <img src="/images/suitcas.png" width="200px" style="margin: auto"/>
+                        </div>
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v2__form">
                                             <span>If guests need anything in order to enjoy your experience, this is the place to tell
@@ -772,9 +783,9 @@
                                                             <span>Upload at least 5 more photos that highlight different aspects of your experierce.
                                                                     Photos should include host/guest interaction, the location where you're hosting,
                                                                     and close-up detai Is of the experience.</span><br><br><br>
-                                                                    
+
                                                                     <input type="file" name="file[]" multiple="multiple"/>
-                                                                    
+
                                                     </div>
                                     </div>
                                 </div>
@@ -816,7 +827,7 @@
                                     </div>
                                 </div>
                         </div>
-                        
+
 
                         <!--end: Form Wizard Step 5-->
 
@@ -899,7 +910,7 @@
                         <input type="file" multiple="multiple" class="dz-hidden-input" accept="image/*,application/pdf,.psd" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
                         <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
                         <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
-                        
+
                     </form>
 
                     <!--end: Form Wizard Form-->
@@ -909,7 +920,7 @@
     </div>
 
     <script>
-        
+
             var bringCpt=1;
             function add(){
                 bringCpt++;
@@ -999,7 +1010,7 @@
                     document.getElementById("textAr_Transport").value="";
             }
 
-            
+
         </script>
 
 
