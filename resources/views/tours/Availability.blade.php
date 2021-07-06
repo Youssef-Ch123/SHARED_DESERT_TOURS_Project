@@ -56,18 +56,14 @@
                         <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
                             <div class="kt-form__group kt-form__group--inline">
                                 <div class="kt-form__label">
-                                    <label>Title </label>
+                                    <label>Availability </label>
                                 </div>
                                 <div class="kt-form__control">
-                                    <div class="dropdown bootstrap-select form-control"><select class="form-control bootstrap-select" id="kt_form_type" tabindex="-98">
+                                    <div class="dropdown bootstrap-select form-control"><select class="form-control bootstrap-select" id="kt_form_type" tabindex="-98" onchange="subAvail(this)">
                                         <option value="-1">Select</option>
-                                        <option value="sup5">Availability > 5</option>
-                                        <option value="sup10">Availability > 10</option>
-                                        <option value="sup20">Availability > 20</option>
-
-                                        <option value="inf5">Availability < 5</option>
-                                        <option value="inf10">Availability < 10</option>
-                                        <option value="inf20">Availability < 20</option>
+                                        <option value="5"> > 5</option>
+                                        <option value="10"> > 10</option>
+                                        <option value="20"> > 20</option>
                                     </select><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-2" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
                                 </div>
                             </div>
@@ -88,8 +84,11 @@
     <div class="kt-portlet__body kt-portlet__body--fit">
 
         <!--begin: Datatable -->
-        <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--subtable kt-datatable--loaded" id="child_data_local" style="position: static; zoom: 1;"><table class="kt-datatable__table" style="display: block;"><thead class="kt-datatable__head"><tr class="kt-datatable__row" style="text-align: left"><th data-field="RecordID" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--sort"><span style="width: 30px;"></span></th><th data-field="FirstName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Image</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Title</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Group size</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Available</span></th></tr></thead>
-            <tbody class="kt-datatable__body tbody">
+        <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--subtable kt-datatable--loaded" id="child_data_local" style="position: static; zoom: 1;"><table class="kt-datatable__table" style="display: block;"><thead class="kt-datatable__head"><tr class="kt-datatable__row" style="text-align: left">
+
+            <th data-field="RecordID" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--sort"><span style="width: 30px;"></span></th><th data-field="FirstName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Image</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Title</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Group size</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Available</span></th>
+        </tr></thead>
+            <tbody class="kt-datatable__body tbody" id="tab">
                 @foreach ($tours as $tour)
                     <tr data-row="0" class="kt-datatable__row kt-datatable__row--even" style="text-align: left">
 
@@ -99,7 +98,7 @@
 
                         <td data-field="Company" class="kt-datatable__cell"><span style="width: 100px;"><img width="80px" height="100px" src='{{$tour->image}}'></span></td>
 
-                        <td data-field="LastName" class="kt-datatable__cell"><span style="width: 250px;">{{$tour->Title}}</span></td>
+                        <td data-field="LastName" class="kt-datatable__cell"><span style="width: 150px;">{{$tour->Title}}</span></td>
 
                         <td data-field="FirstName" class="kt-datatable__cell"><span style="width: 150px;">{{$tour->Group_Size}}</span></td>
 
@@ -121,18 +120,14 @@
         function subTitle(object){
             var Title = object.value;
             $.get("/SearchByTitle", {'Title':Title}).done(function (data) {
-                $.ajax({
-                    type:'get',
-                    dataType:'html',
-                    url:"{{url('/Search')}}",
-                    data:"tours="+data,
-                    success:function(response){
-                        $("#div").html(response);
-                    }
-
-                });
+                $("#tab").html(data);
             });
         }
-
+        function subAvail(object){
+            var Avail = object.value;
+            $.get("/SearchByAvail", {'nbr':Avail}).done(function (data) {
+                $("#tab").html(data);
+            });
+        }
     </script>
 @endsection

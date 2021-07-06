@@ -72,10 +72,7 @@ Route::resource('Paiement', PaimentController::class);
 
 Route::get('/Availability', 'App\Http\Controllers\TourController@availability');
 Route::get('/SearchByTitle', 'App\Http\Controllers\TourController@SearchByTitle');
-
-Route::get('/Search', function(Request $request){
-    return view('tours.Search',['tours'=>$request]);
-});
+Route::get('/SearchByAvail', 'App\Http\Controllers\TourController@SearchByAvail');
 
 
 
