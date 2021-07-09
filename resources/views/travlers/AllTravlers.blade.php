@@ -86,19 +86,36 @@
     <div class="kt-portlet__body kt-portlet__body--fit">
 
         <!--begin: Datatable -->
-        <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--subtable kt-datatable--loaded" id="child_data_local" style="position: static; zoom: 1;"><table class="kt-datatable__table" style="display: block;"><thead class="kt-datatable__head"><tr class="kt-datatable__row"><th data-field="RecordID" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--sort"><span style="width: 30px;"></span></th><th data-field="FirstName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">First name</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Last name</span></th><th data-field="Company" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Tel</span></th><th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Email</span></th><th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Adress</span></th><th data-field="Actions" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Actions</span></th></tr></thead>
+        <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--subtable kt-datatable--loaded" id="child_data_local" style="position: static; zoom: 1;"><table class="kt-datatable__table" style="display: block;">
+
+            <thead class="kt-datatable__head"><tr class="kt-datatable__row">
+
+                <th data-field="RecordID" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--sort"><span style="width: 30px;"></span></th>
+
+            <th data-field="FirstName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Travler</span></th>
+
+            <th data-field="Company" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Tel</span></th>
+
+            <th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Email</span></th>
+
+            <th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Address</span></th>
+
+            <th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Tour</span></th>
+
+            <th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Date</span></th>
+
+            <th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Places</span></th>
+
+            <th data-field="Actions" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Actions</span></th></tr></thead>
             <tbody class="kt-datatable__body" style="">
-                <?php $id=0;$cpt=0; ?>
-                @foreach ($travlers as $travler)
-                    <tr data-row="{{++$cpt}}" class="kt-datatable__row kt-datatable__row--even">
+                @foreach ($Travlers as $travler)
+                    <tr class="kt-datatable__row kt-datatable__row--even">
 
                         <td class="kt-datatable__cell--center kt-datatable__cell" data-field="RecordID">
-                        <a class="kt-datatable__toggle-subtable" href="#" onclick="funct(<?php  $id=$travler->IdTravler; echo $id; ?>)" data-value="1" title="Load sub table" style="width: 30px;"><i class="fa fa-caret-right" id="{{'flech'.$id}}" style="width: 30px;"></i></a>
+                        <a class="kt-datatable__toggle-subtable" href="#"  data-value="1" title="Load sub table" style="width: 30px;"><i class="fa fa-caret-right" style="width: 30px;"></i></a>
                         </td>
 
-                        <td data-field="FirstName" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->FirstName}}</span></td>
-
-                        <td data-field="LastName" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->LastName}}</span></td>
+                        <td data-field="FirstName" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->FirstName}} {{$travler->LastName}}</span></td>
 
                         <td data-field="Company" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->Tel}}</span></td>
 
@@ -106,94 +123,24 @@
 
                         <td data-field="Email" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->HomeTown}}</span></td>
 
+                        <td data-field="Email" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->Title}}</span></td>
+
+                        <td data-field="Email" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->Date}}</span></td>
+
+                        <td data-field="Email" class="kt-datatable__cell"><span style="width: 130px;">{{$travler->N_Places}}</span></td>
+
 
                         <td data-field="Actions" class="kt-datatable__cell"><span style="overflow: visible; position: relative; width: 130px;">
                             <a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Edit details">		                      <i class="la la-edit"></i>		                  </a>		                  <a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Delete">		                      <i class="la la-trash"></i>		                  </a>		              </span></td>
                     </tr>
-
-                    <tr class="kt-datatable__row-subtable kt-datatable__row-subtable--even" style="display: none" id="{{'tab'.$id}}">
-                        <td class="kt-datatable__subtable" colspan="8"><div id="child_data_local_28" class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--scroll kt-datatable--loaded" style="">
-                        <table class="kt-datatable__table" style="display: block; max-height: 400px;" >
-                                <thead class="kt-datatable__head" style="background-color: gray;">
-                                        <tr class="kt-datatable__row"><th data-field="RecordID" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--sort"><span style="width: 30px;"></span></th><th data-field="FirstName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">ID</span></th><th data-field="LastName" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">City from</span></th><th data-field="Company" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">City to</span></th><th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Duration</span></th><th data-field="Actions" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 130px;">Actions</span></th></tr>
-                                </thead>
-
-                                <tbody class="kt-datatable__body ps" style="max-height: 346px;">
-                                    @foreach ($bookings as $booking)
-                                        @if($booking->travler_id==$id)
-                                            @foreach ($groups as $group)
-                                                @if ($group->NumGroup == $booking->group_id)
-                                                    @foreach ($tours as $tour)
-                                                        @if ($tour->NumTour == $group->tour_id)
-                                                            <tr data-row="0" class="kt-datatable__row">
-                                                                    <td data-field="FirstName" class="kt-datatable__cell"><span style="width: 130px;">{{$tour->NumTour}}</span></td>
-
-                                                                    <td data-field="LastName" class="kt-datatable__cell"><span style="width: 130px;">{{$tour->cityFrom}}</span></td>
-
-                                                                    <td data-field="Company" class="kt-datatable__cell"><span style="width: 130px;">{{$tour->cityTo}}</span></td>
-
-                                                                    <td data-field="Email" class="kt-datatable__cell"><span style="width: 130px;">{{$tour->Duration}}</span></td>
-
-                                                                <td data-field="Actions" class="kt-datatable__cell"><span style="overflow: visible; position: relative; width: 130px;">
-                                                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Edit details">		                      <i class="la la-edit"></i>		                  </a>		                  <a href="javascript:;" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Delete">		                      <i class="la la-trash"></i>		                  </a>		              </span></td>
-                                                            </tr>
-
-                                                        @endif
-                                                    @endforeach
-
-                                                @endif
-                                            @endforeach
-
-                                        @endif
-                                    @endforeach
-
-
-                                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div>
-                                </tbody>
-                                </table>
-
-                                </div></td></tr>
                 @endforeach
 </tbody>
 
         </table>
-        {{-- <div class="kt-datatable__pager kt-datatable--paging-loaded">
-            <ul class="kt-datatable__pager-nav">
-
-                <li><a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a></li>
-
-                <li><a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a></li><li style=""></li>
-
-                <li style="display: none;"><input type="text" class="kt-pager-input form-control" title="Page number"></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a></li><li style=""></li>
-
-                <li><a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-next"></i></a></li>
-
-                <li><a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-next"></i></a></li>
-
-            </ul>
-        </div> --}}
-
-        <div class="kt-datatable__pager kt-datatable--paging-loaded"><ul class="kt-datatable__pager-nav"><li><a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first" data-page="1"><i class="flaticon2-fast-back"></i></a></li><li><a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev" data-page="3"><i class="flaticon2-back"></i></a></li><li style=""></li><li style="display: none;"><input type="text" class="kt-pager-input form-control" title="Page number"></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="1" title="1">1</a></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="4" title="4">4</a></li><li style=""></li><li><a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next kt-datatable__pager-link--disabled" data-page="4" disabled="disabled"><i class="flaticon2-next"></i></a></li><li><a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last kt-datatable__pager-link--disabled" data-page="4" disabled="disabled"><i class="flaticon2-fast-next"></i></a></li></ul><div class="kt-datatable__pager-info"><div class="dropdown bootstrap-select kt-datatable__pager-size" style="width: 60px;"><select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-container="body" data-selected="100" tabindex="-98"><option class="bs-title-option" value=""></option><option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="50">50</option><option value="100">100</option></select><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-8" aria-haspopup="listbox" aria-expanded="false" title="Select page size"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">100</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-8" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div><span class="kt-datatable__pager-detail">Showing 301 - 350 of 350</span></div></div>
-
-
 </div>
 
         <!--end: Datatable -->
     </div>
 </div>
-<script>
-    var etat=true;
-    function funct(cpt){
-        if(etat==true){
-            document.getElementById('flech'+cpt).setAttribute('class','fa fa-caret-down');
-            document.getElementById('tab'+cpt).style.display='block';
-            etat=false;
-        }else{
-            document.getElementById('flech'+cpt).setAttribute('class','fa fa-caret-right');
-            document.getElementById('tab'+cpt).style.display='none';
-            etat=true;
-        }
-    }
-</script>
 @endsection
 

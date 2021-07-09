@@ -18,6 +18,7 @@ class CreateBookingTable extends Migration
               $table->integer('id');
               $table->date('Date');
               $table->integer('N_Places')->unsigned();
+              $table->string('Validated')->default('Not yet');
 
               $table->integer('travler_id');
               $table->index('travler_id');
@@ -37,7 +38,7 @@ class CreateBookingTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-                
+
               $table->primary(['id', 'travler_id', 'group_id']);
 
               $table->engine='INNODB';

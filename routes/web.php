@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\MoyTransportController;
 use App\Http\Controllers\PaimentController;
 use Illuminate\Support\Facades\Route;
@@ -74,5 +76,12 @@ Route::get('/Availability', 'App\Http\Controllers\TourController@availability');
 Route::get('/SearchByTitle', 'App\Http\Controllers\TourController@SearchByTitle');
 Route::get('/SearchByAvail', 'App\Http\Controllers\TourController@SearchByAvail');
 
+Route::resource('/Agency/Bookings', BookingController::class);
+Route::get('/SearchByDate', 'App\Http\Controllers\BookingController@SearchByDate');
+Route::get('/SearchByTravler', 'App\Http\Controllers\BookingController@SearchByTravler');
 
+
+Route::resource('/Agency/FeedBacks', FeedBackController::class);
+Route::get('/Feedbacks/SearchByTitle', 'App\Http\Controllers\FeedBackController@SearchByTitle');
+Route::get('/Feedbacks/SearchByStars', 'App\Http\Controllers\FeedBackController@SearchByStars');
 

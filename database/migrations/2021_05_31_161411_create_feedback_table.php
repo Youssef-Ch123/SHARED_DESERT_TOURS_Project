@@ -18,6 +18,7 @@ class CreateFeedbackTable extends Migration
               $table->integer('id')->unsigned();
               $table->integer('N_Stars');
               $table->string('Comment');
+              $table->date('Date');
 
               $table->integer('booking_id');
               $table->index('booking_id');
@@ -32,7 +33,7 @@ class CreateFeedbackTable extends Migration
                 ->onDelete('cascade');
 
               $table->primary(['id', 'booking_id', 'travler_id']);
-              
+
 
               $table->engine='INNODB';
               $table->timestamps();
